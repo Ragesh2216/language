@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 36" width="160" height="36" fill="none">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  
+  <g transform="translate(4, 2)">
+    <!-- Overlapping chat bubbles representing translation and flow -->
+    <path d="M19 7 C12.4 7, 7 11, 7 16 C7 19.3, 9.4 22.1, 13 23.5 C13 26.5, 10 28, 10 28 C12.5 28, 15.5 26.5, 17 25 C17.7 25, 18.3 25, 19 25 C25.6 25, 31 21, 31 16 C31 11, 25.6 7, 19 7 Z" fill="url(#logoGrad)" opacity="0.6" />
+    <path d="M13 13 C7.5 13, 3 16.4, 3 20.5 C3 23.3, 5 25.6, 8 26.8 C8 29.3, 5.5 30.5, 5.5 30.5 C7.5 30.5, 10 29.3, 11.2 28 C11.8 28.1, 12.4 28.1, 13 28.1 C18.5 28.1, 23 24.7, 23 20.5 C23 16.4, 18.5 13, 13 13 Z" stroke="#ffffff" stroke-width="1.5" fill="url(#logoGrad)" />
+  </g>
+
+  <text x="42" y="25" font-family="'Space Grotesk', 'Inter', sans-serif" font-size="20" font-weight="700" fill="#ffffff">Stackly</text>
+</svg>

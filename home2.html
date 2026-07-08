@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LingoFlow — Advanced Language Acquisition | Platform V2</title>
+  <meta name="description" content="LingoFlow Platform V2 — unified language learning ecosystem for AI-driven conversations, subtitle vocabulary sync, spaced repetition flashcards, and student dashboard metrics." />
+  <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .rotating-ring{width:220px;height:220px;border-radius:50%;border:1.5px solid rgba(249,115,22,0.25);position:absolute;animation:spin 18s linear infinite;}
+    .rotating-ring2{width:320px;height:320px;border-radius:50%;border:1.5px solid rgba(99,102,241,0.15);position:absolute;animation:spin 30s linear infinite reverse;}
+    @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+    .hero2{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-height)+60px) 5% 80px;background:var(--gradient-hero);position:relative;overflow:hidden;}
+    .hero2::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(249,115,22,0.03) 1px,transparent 1px),linear-gradient(90deg, rgba(249,115,22,0.03) 1px, transparent 1px);background-size:60px 60px;}
+    .tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+  </style>
+</head>
+<body>
+<div id="preloader"><div class="preloader-inner"><div class="preloader-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #fff;">Stackly</div><div class="preloader-bar"><div class="preloader-bar-fill"></div></div></div></div>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand"><img src="logo.svg" alt="Stackly Logo" style="height:36px; width:auto;"></a>
+  <div class="navbar-links">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="devices.html">Learning Tools</a>
+    <a href="services.html">Plans &amp; Standards</a><a href="innovations.html">AI Tutor</a><a href="contact.html">Custom Lesson</a>
+    <div style="display:flex; gap:10px; margin-left:14px;">
+      <a href="login.html" class="btn btn-ghost btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Register</a>
+    </div>
+  </div>
+  <button class="navbar-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+</nav>
+<div class="navbar-mobile" id="mobileNav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="devices.html">Learning Tools</a>
+  <a href="services.html">Plans &amp; Standards</a><a href="innovations.html">AI Tutor</a><a href="contact.html">Custom Lesson</a>
+  <div class="mobile-access-section" style="display:flex; flex-direction:column; gap:10px; padding:15px; border-top:1px solid rgba(255,255,255,0.05); margin-top:10px;">
+    <a href="login.html" class="btn btn-outline" style="width:100%; justify-content:center;">Login</a>
+    <a href="register.html" class="btn btn-primary" style="width:100%; justify-content:center;">Register</a>
+  </div>
+</div>
+
+<section class="hero2">
+  <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;">
+    <div class="rotating-ring"></div>
+    <div class="rotating-ring2" style="position:relative"></div>
+  </div>
+  <div style="position:absolute;top:-80px;right:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(249,115,22,0.1) 0%,transparent 70%);pointer-events:none;border-radius:50%;"></div>
+  <div style="position:absolute;bottom:-80px;left:10%;width:350px;height:350px;background:radial-gradient(circle,rgba(99,102,241,0.09) 0%,transparent 70%);pointer-events:none;border-radius:50%;"></div>
+
+  <div style="position:relative;z-index:2;max-width:800px;">
+    <div class="hero-label" style="display:inline-flex;margin-bottom:32px;"><span class="dot"></span>LingoFlow Operating System V2 · Salem, India</div>
+    <h1 class="hero-title">The Intelligent <span class="gradient-text">Learning System</span> for Fluent Speech</h1>
+    <p class="hero-desc" style="max-width:620px;margin:0 auto 40px;">One unified platform that connects your mobile apps, browser extensions, subtitle streams, and chat widgets — sorting vocabulary items and accelerating fluency 10× faster.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="register.html" class="btn btn-primary btn-lg">Start Learning Free →</a>
+      <a href="dashboard.html" class="btn btn-outline btn-lg">Student Portal Demo</a>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:40px;">
+      <span style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.3);border-radius:var(--radius-pill);padding:6px 16px;font-size:0.78rem;color:var(--primary);">CEFR Aligned (A1–C2)</span>
+      <span style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2);border-radius:var(--radius-pill);padding:6px 16px;font-size:0.78rem;color:var(--secondary-light);">SRS Optimised</span>
+      <span style="background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:var(--radius-pill);padding:6px 16px;font-size:0.78rem;color:var(--accent);">Speech Accent Feedback</span>
+      <span style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius-pill);padding:6px 16px;font-size:0.78rem;color:var(--accent2);">Multilingual Chatbot</span>
+    </div>
+    <div style="max-width:800px; margin:48px auto 0; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-glow); position:relative; z-index:2; background:var(--bg-card); padding:10px;">
+      <!-- CSS Grid base mock representing learning system nodes -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;padding:20px;height:240px;align-items:center;">
+        <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;background:var(--bg-dark);animation:pulseNode 4s infinite;">
+          <div style="font-size:1.5rem;margin-bottom:8px;">📚</div>
+          <h4 style="font-size:0.9rem;font-weight:600;">Reading Hook</h4>
+          <span style="color:#22c55e;font-size:0.75rem;">🟢 Active Node</span>
+        </div>
+        <div style="border:1px solid var(--primary);border-radius:var(--radius);padding:16px;background:var(--bg-dark);box-shadow:var(--shadow-glow);animation:pulseNode 4s infinite;animation-delay:1.5s;">
+          <div style="font-size:1.5rem;margin-bottom:8px;">🤖</div>
+          <h4 style="font-size:0.9rem;font-weight:600;">LingoFlow AI Core</h4>
+          <span style="color:var(--primary);font-size:0.75rem;font-weight:700;">⚙️ Translating...</span>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius);padding:16px;background:var(--bg-dark);animation:pulseNode 4s infinite;animation-delay:3s;">
+          <div style="font-size:1.5rem;margin-bottom:8px;">💬</div>
+          <h4 style="font-size:0.9rem;font-weight:600;">Subtitle Sync</h4>
+          <span style="color:#22c55e;font-size:0.75rem;">🟢 Active Node</span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:800px; margin:24px auto 0; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-glow);">
+      <img src="home_hero.webp" alt="Prompt: A futuristic language learning dashboard showing vocabulary progress, a glowing purple streak calendar, and chat bubbles, cyberpunk, premium aesthetic." style="width:100%; height:auto; display:block;">
+    </div>
+  </div>
+</section>
+
+<div class="ticker-wrap"><div class="ticker-label">LingoFlow Releases</div><div style="overflow:hidden;flex:1;"><div class="ticker-track">
+  <span class="ticker-item">Fluency performance index reaches 99.98% across active users</span>
+  <span class="ticker-item">New daily streak challenges drop review intervals to 32 seconds</span>
+  <span class="ticker-item">API integrations expanded to Netflix subtitle captures and Kindle highlights</span>
+  <span class="ticker-item">LingoFlow AI core upgraded with natural speech pronunciation models</span>
+</div></div></div>
+
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Learning Modules</div>
+      <h2 class="section-title">End-to-End <span>Fluency</span> Modules</h2>
+      <p class="section-subtitle">Modular language learning architecture — integrate with your subtitle feeds, dictionary files, and active study cards.</p>
+    </div>
+    <div class="tech-grid" style="margin-top:52px;">
+      <div class="feature-card reveal"><div class="card-icon">📥</div><h3 class="card-title">Ingestion Engine</h3><p class="card-text">Connect reading lists or video subtitle feeds. We capture and index unfamiliar words in real-time.</p><div style="margin-top:16px;font-size:0.82rem;color:var(--primary);font-weight:500;">Explore →</div></div>
+      <div class="feature-card reveal reveal-delay-1"><div class="card-icon">🤖</div><h3 class="card-title">AI Grammar Coach</h3><p class="card-text">Analyzes sentences to identify grammatical anomalies and conjugations automatically.</p><div style="margin-top:16px;font-size:0.82rem;color:var(--primary);font-weight:500;">Explore →</div></div>
+      <div class="feature-card reveal reveal-delay-2"><div class="card-icon">⚡</div><h3 class="card-title">Spaced Repetition (SRS)</h3><p class="card-text">Adaptive timers prompt card reviews and highlight weak vocab items before memory decay occurs.</p><div style="margin-top:16px;font-size:0.82rem;color:var(--primary);font-weight:500;">Explore →</div></div>
+      <div class="feature-card reveal"><div class="card-icon">🔗</div><h3 class="card-title">Subtitle Sync</h3><p class="card-text">Capture vocabulary, save expressions, or generate flashcards while watching Netflix or YouTube.</p><div style="margin-top:16px;font-size:0.82rem;color:var(--primary);font-weight:500;">Explore →</div></div>
+      <div class="feature-card reveal reveal-delay-1"><div class="card-icon">📡</div><h3 class="card-title">Developer APIs</h3><p class="card-text">Query word definitions, extract context translations, and fetch pronunciation confidence logs.</p><div style="margin-top:16px;font-size:0.82rem;color:var(--primary);font-weight:500;">Explore →</div></div>
+      <div class="feature-card reveal reveal-delay-2"><div class="card-icon">📊</div><h3 class="card-title">Learning Analytics</h3><p class="card-text">Detailed XP charts, daily streak calendars, grammar correctness curves, and proficiency rank tables.</p><div style="margin-top:16px;font-size:0.82rem;color:var(--primary);font-weight:500;">Explore →</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="text-center reveal"><div class="section-tag">Comparison</div><h2 class="section-title">LingoFlow vs <span>Traditional Methods</span></h2></div>
+    <div style="margin-top:48px;overflow-x:auto;">
+      <table class="data-table" style="min-width:600px;">
+        <thead><tr><th>Capability</th><th style="color:var(--primary);">⬡ LingoFlow Premium</th><th>Generic Gamified Apps</th><th>Legacy Classrooms</th></tr></thead>
+        <tbody>
+          <tr><td>AI Speaking Practice</td><td style="color:var(--primary);font-weight:600;">✓ Real-time audio feedback</td><td style="color:var(--text-muted);">✗ Simple tapping exercises</td><td style="color:var(--accent2);">Difficult to practice daily</td></tr>
+          <tr><td>Subtitle Vocabulary Sync</td><td style="color:var(--primary);font-weight:600;">✓ Native YouTube/Netflix</td><td style="color:var(--text-muted);">✗ Fixed vocabulary loops</td><td style="color:var(--text-muted);">✗ No video syncing</td></tr>
+          <tr><td>Spaced Repetition (SRS)</td><td style="color:var(--primary);font-weight:600;">✓ Adaptive neural intervals</td><td style="color:var(--text-muted);">✗ Basic standard cards</td><td style="color:var(--text-muted);">✗ Manual study card decks</td></tr>
+          <tr><td>Primary Skill Focus</td><td style="color:var(--primary);font-weight:600;">⚡ Confidence &amp; Fluency</td><td style="color:var(--text-muted);">Points &amp; Leaderboards</td><td style="color:var(--text-muted);">Conjugation drills only</td></tr>
+          <tr><td>Student Streak Metrics</td><td style="color:var(--primary);font-weight:600;">✓ Visual learning heatmap</td><td style="color:var(--text-primary);">Basic streak number</td><td style="color:var(--text-muted);">✗ None available</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm"><div class="container"><div class="cta-banner reveal text-center">
+  <h2 class="section-title">Power Your <span>Language Fluency</span></h2>
+  <p class="section-subtitle" style="margin:0 auto 32px;">Join thousands of students and language academies using LingoFlow. Start with a free account today.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <a href="register.html" class="btn btn-primary btn-lg">Start Learning Free →</a>
+    <a href="contact.html" class="btn btn-outline btn-lg">Talk to a Linguist</a>
+  </div>
+</div></div></section>
+
+<footer><div class="container-wide">
+  <div class="footer-grid">
+    <div><img src="logo.svg" alt="Stackly" class="footer-brand" style="height:40px; width:auto; margin-bottom:14px;"><p class="footer-desc">Pioneering cognitive linguistics and language learning at the intersection of AI, real-time sync, and EdTech platforms.</p><p style="font-size:.82rem;color:var(--text-muted);margin-bottom:16px;">📍 LingoFlow Salem, India</p><div class="footer-socials"><a href="404.html" class="footer-social-btn">𝕏</a><a href="404.html" class="footer-social-btn">in</a><a href="404.html" class="footer-social-btn">⌥</a></div></div>
+    <div><div class="footer-col-title">Product</div><div class="footer-links"><a href="devices.html">Learning Tools</a><a href="services.html">Plans &amp; Standards</a><a href="innovations.html">AI Tutor</a></div></div>
+    <div><div class="footer-col-title">Company</div><div class="footer-links"><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="index.html">Home V1</a><a href="login.html">Student Login</a></div></div>
+    <div><div class="footer-col-title">Legal</div><div class="footer-links"><a href="404.html">Privacy</a><a href="404.html">Terms</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 LingoFlow Labs. All rights reserved.</span><span>📍 LingoFlow Salem, India</span></div>
+</div></footer>
+<button id="scrollTop">↑</button>
+<script src="js/main.js"></script>
+</body></html>

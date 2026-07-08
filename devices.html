@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Tools &amp; API — LingoFlow</title>
+  <meta name="description" content="Integrate LingoFlow vocabulary collectors into Chrome, Kindle highlights, mobile widgets, REST APIs, and command line study tools." />
+  <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+<div id="preloader"><div class="preloader-inner"><div class="preloader-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #fff;">Stackly</div><div class="preloader-bar"><div class="preloader-bar-fill"></div></div></div></div>
+
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand"><img src="logo.svg" alt="Stackly Logo" style="height:36px; width:auto;"></a>
+  <div class="navbar-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="devices.html" class="active">Learning Tools</a><a href="services.html">Plans &amp; Standards</a>
+    <a href="innovations.html">AI Tutor</a><a href="contact.html">Custom Lesson</a>
+    <div style="display:flex; gap:10px; margin-left:14px;">
+      <a href="login.html" class="btn btn-ghost btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Register</a>
+    </div>
+  </div>
+  <button class="navbar-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+</nav>
+<div class="navbar-mobile" id="mobileNav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="devices.html">Learning Tools</a>
+  <a href="services.html">Plans &amp; Standards</a><a href="innovations.html">AI Tutor</a><a href="contact.html">Custom Lesson</a>
+  <div class="mobile-access-section" style="display:flex; flex-direction:column; gap:10px; padding:15px; border-top:1px solid rgba(255,255,255,0.05); margin-top:10px;">
+    <a href="login.html" class="btn btn-outline" style="width:100%; justify-content:center;">Login</a>
+    <a href="register.html" class="btn btn-primary" style="width:100%; justify-content:center;">Register</a>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="section-tag" style="margin:0 auto 20px;">Channels &amp; SDKs</div>
+    <h1 class="section-title">Connect LingoFlow <span>Anywhere</span></h1>
+    <p class="section-subtitle" style="margin:0 auto 30px;">Collect vocabulary and practice speaking directly where you read, watch, and work.</p>
+    <div style="max-width:800px; margin:0 auto; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-glow); background:var(--bg-card); padding:24px;">
+      <!-- Interactive Grid simulation representing active learning tools -->
+      <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:16px;">
+        <span style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); border-radius:var(--radius-pill); padding:8px 20px; font-size:0.85rem; color:#22c55e;">🟢 Chrome Extension Active</span>
+        <span style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); border-radius:var(--radius-pill); padding:8px 20px; font-size:0.85rem; color:#22c55e;">🟢 Subtitle Sync Active</span>
+        <span style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); border-radius:var(--radius-pill); padding:8px 20px; font-size:0.85rem; color:#22c55e;">🟢 Kindle Sync Active</span>
+        <span style="background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.3); border-radius:var(--radius-pill); padding:8px 20px; font-size:0.85rem; color:var(--primary);">⚡ API Latency: 32ms</span>
+      </div>
+    </div>
+    <div style="max-width:800px; margin:40px auto 0; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-glow);">
+      <img src="devices_hero.webp" alt="Prompt: Sleek integration badges of browser, mobile, Kindle, and subtitle nodes linking together on a glowing tech grid, dark mode cyber aesthetic, 3D render." style="width:100%; height:auto; display:block;">
+    </div>
+  </div>
+</section>
+
+<!-- DEVICES CATALOG -->
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      <!-- Chrome -->
+      <div class="card reveal">
+        <div style="font-size:2.5rem; margin-bottom:14px;">🌐</div>
+        <h3 class="card-title">Chrome Extension</h3>
+        <p class="card-text" style="margin-bottom:16px;">Bidirectional synchronization. Hover to translate words, save terms, and capture movie subtitle contexts directly inside Netflix and YouTube.</p>
+        <span class="tag active">Install Extension</span>
+      </div>
+      <!-- Mobile -->
+      <div class="card reveal reveal-delay-1">
+        <div style="font-size:2.5rem; margin-bottom:14px;">📱</div>
+        <h3 class="card-title">Mobile Widgets</h3>
+        <p class="card-text" style="margin-bottom:16px;">Study on the go. Daily streak reminders, micro-speaking drills, and lockscreen word-of-the-day widgets for iOS and Android.</p>
+        <span class="tag active">Get Mobile App</span>
+      </div>
+      <!-- E-Reader -->
+      <div class="card reveal reveal-delay-2">
+        <div style="font-size:2.5rem; margin-bottom:14px;">📖</div>
+        <h3 class="card-title">Kindle &amp; Books Sync</h3>
+        <p class="card-text" style="margin-bottom:16px;">Synchronize your Kindle highlights. Highlighted terms in foreign-language books are automatically sent to your Spaced Repetition study queue.</p>
+        <span class="tag active">Hook E-Reader</span>
+      </div>
+      <!-- API -->
+      <div class="card reveal">
+        <div style="font-size:2.5rem; margin-bottom:14px;">💻</div>
+        <h3 class="card-title">Developer REST API</h3>
+        <p class="card-text" style="margin-bottom:16px;">Access dictionaries programmatically. Query translations, download vocabulary definitions, or bind pronunciation scoring webhooks.</p>
+        <span class="tag active">Read Docs</span>
+      </div>
+      <!-- CLI -->
+      <div class="card reveal reveal-delay-1">
+        <div style="font-size:2.5rem; margin-bottom:14px;">🛠️</div>
+        <h3 class="card-title">LingoFlow CLI Tool</h3>
+        <p class="card-text" style="margin-bottom:16px;">For developer students. Review vocabulary decks, test translation recall, and inspect study streak telemetry directly inside terminal windows.</p>
+        <span class="tag active">npm install -g lingoflow</span>
+      </div>
+      <!-- Chat Widget -->
+      <div class="card reveal reveal-delay-2">
+        <div style="font-size:2.5rem; margin-bottom:14px;">💬</div>
+        <h3 class="card-title">Embeddable AI Partner</h3>
+        <p class="card-text" style="margin-bottom:16px;">Embed a glassmorphic chat partner widget into your web app. Lets users practice speaking and get accent scoring instantly.</p>
+        <span class="tag active">Fetch Widget Code</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPER CODE MOCKUP WITH GLOWING ANIMATION -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="grid-2" style="gap:60px;">
+      <div class="reveal">
+        <div class="section-tag">API Integration</div>
+        <h2 class="section-title">Query Definitions <span>Programmatically</span></h2>
+        <p class="section-subtitle" style="margin-bottom:20px;">Use our lightweight cURL API endpoints to fetch sentence analyses, word definitions, or check pronunciation audio.</p>
+        <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.7;">By building LingoFlow API calls into your apps, you can analyze student text, generate translations, or fetch flashcard schedules from our server clusters.</p>
+      </div>
+      <div class="reveal reveal-delay-2" style="background:var(--bg-dark); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; font-family:monospace; font-size:0.82rem; overflow-x:auto;">
+        <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px; color:var(--text-muted);">
+          <span>POST /api/v1/pronounce</span><span>cURL</span>
+        </div>
+        <span style="color:var(--secondary-light);">curl</span> -X POST https://api.lingoflow.com/v1/pronounce \<br>
+        &nbsp;&nbsp;-H <span style="color:var(--accent2);">"Authorization: Bearer lf_live_83k..."</span> \<br>
+        &nbsp;&nbsp;-H <span style="color:var(--accent2);">"Content-Type: application/json"</span> \<br>
+        &nbsp;&nbsp;-d '{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--primary);">"word"</span>: <span style="color:var(--accent2);">"mariposa"</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--primary);">"audio_url"</span>: <span style="color:var(--accent2);">"https://storage.lingoflow.com/rec_04.wav"</span>,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--primary);">"target_lang"</span>: <span style="color:var(--accent2);">"es"</span><br>
+        &nbsp;&nbsp;}'
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container-wide">
+  <div class="footer-grid">
+    <div><img src="logo.svg" alt="Stackly" class="footer-brand" style="height:40px; width:auto; margin-bottom:14px;"><p class="footer-desc">Pioneering cognitive linguistics and language learning at the intersection of AI, real-time sync, and EdTech platforms.</p><p style="font-size:.82rem;color:var(--text-muted);margin-bottom:16px;">📍 LingoFlow Salem, India</p><div class="footer-socials"><a href="404.html" class="footer-social-btn">𝕏</a><a href="404.html" class="footer-social-btn">in</a><a href="404.html" class="footer-social-btn">⌥</a></div></div>
+    <div><div class="footer-col-title">Product</div><div class="footer-links"><a href="devices.html">Learning Tools</a><a href="services.html">Plans &amp; Standards</a><a href="innovations.html">AI Tutor</a></div></div>
+    <div><div class="footer-col-title">Company</div><div class="footer-links"><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="dashboard.html">Coach Console</a></div></div>
+    <div><div class="footer-col-title">Legal</div><div class="footer-links"><a href="404.html">Privacy</a><a href="404.html">Terms</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 LingoFlow Labs. All rights reserved.</span><span>📍 LingoFlow Salem, India</span></div>
+</div></footer>
+<button id="scrollTop">↑</button>
+<script src="js/main.js"></script>
+</body></html>

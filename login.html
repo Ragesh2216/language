@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — LingoFlow Language Labs</title>
+  <meta name="description" content="Access LingoFlow's learning portals. Sign in as a language coach or student to track fluency progress." />
+  <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--gradient-hero);
+      position: relative; overflow: hidden;
+      padding: calc(var(--nav-height) + 40px) 5% 60px;
+    }
+    .auth-page::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(249,115,22,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .auth-container { display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;width:100%;z-index:2; }
+    @media(max-width:768px){.auth-container{grid-template-columns:1fr;}.auth-info{display:none;}}
+    .auth-card { background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:44px 40px; }
+    @media(max-width:480px){.auth-card{padding:32px 24px;}}
+    .portal-tabs { display:flex;gap:4px;background:var(--bg-dark);border-radius:var(--radius-sm);padding:4px;margin-bottom:28px; }
+    .portal-tab { flex:1;padding:9px 6px;text-align:center;border-radius:calc(var(--radius-sm) - 2px);font-size:0.82rem;font-weight:600;cursor:pointer;transition:var(--transition);color:var(--text-secondary);border:none;background:none; }
+    .portal-tab.active{background:var(--primary);color:#fff;}
+    .auth-form{display:none;}
+    .auth-form.active{display:block;}
+    .portal-type-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg-glass2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 14px;font-size:0.8rem;color:var(--text-secondary);margin-bottom:20px;}
+    .divider-text{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--text-muted);font-size:0.8rem;}
+    .divider-text::before,.divider-text::after{content:'';flex:1;height:1px;background:var(--border);}
+    .password-wrap{position:relative;}
+    .password-toggle{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1rem;}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand"><img src="logo.svg" alt="Stackly Logo" style="height:36px; width:auto;"></a>
+  <div class="navbar-links">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="devices.html">Learning Tools</a>
+    <a href="services.html">Plans &amp; Standards</a><a href="innovations.html">AI Tutor</a><a href="contact.html">Custom Lesson</a>
+    <div style="display:flex; gap:10px; margin-left:14px;">
+      <a href="login.html" class="btn btn-ghost btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Register</a>
+    </div>
+  </div>
+  <button class="navbar-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+</nav>
+<div class="navbar-mobile" id="mobileNav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="devices.html">Learning Tools</a>
+  <a href="services.html">Plans &amp; Standards</a><a href="innovations.html">AI Tutor</a><a href="contact.html">Custom Lesson</a>
+  <div class="mobile-access-section" style="display:flex; flex-direction:column; gap:10px; padding:15px; border-top:1px solid rgba(255,255,255,0.05); margin-top:10px;">
+    <a href="login.html" class="btn btn-outline" style="width:100%; justify-content:center;">Login</a>
+    <a href="register.html" class="btn btn-primary" style="width:100%; justify-content:center;">Register</a>
+  </div>
+</div>
+
+<div class="auth-page">
+  <div style="position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.07) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div class="auth-container">
+    <!-- Info side -->
+    <div class="auth-info" style="display:flex;flex-direction:column;justify-content:center;gap:20px;">
+      <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-glow); max-width:400px; margin-bottom:12px;">
+        <img src="auth_illustration.webp" alt="Prompt: Secure login interface key and padlock, glowing purple security matrix, language translator mockup, high quality 3D render." style="width:100%; height:auto; display:block;">
+      </div>
+      <div>
+        <div class="section-tag" style="margin-bottom:16px;">LingoFlow Portal</div>
+        <h2 style="font-family:var(--font-heading);font-size:2.2rem;font-weight:700;line-height:1.2;margin-bottom:16px;">
+          One platform for<br><span style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">all fluency milestones</span>
+        </h2>
+        <p style="color:var(--text-secondary);line-height:1.7;">Language coaches, teachers, and students — track your vocabulary streaks, custom AI lesson queues, and essay evaluations from a single secure workspace.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🛡️</div>
+          <div><div style="font-size:0.9rem;font-weight:600;">Coach Console</div><div style="font-size:0.8rem;color:var(--text-muted);">Real-time essay submission reviews, pronunciation grading, and streak tracking</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">👤</div>
+          <div><div style="font-size:0.9rem;font-weight:600;">Student Portal</div><div style="font-size:0.8rem;color:var(--text-muted);">Submit writing reviews, study daily Spaced Repetition (SRS) cards, chat with AI Tutor</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🔒</div>
+          <div><div style="font-size:0.9rem;font-weight:600;">CEFR Aligned Standards</div><div style="font-size:0.8rem;color:var(--text-muted);">AES-256 database encryption · Mapped to international language fluency marks</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth card -->
+    <div class="auth-card">
+      <div class="portal-tabs">
+        <button class="portal-tab active" id="tabCoach">Coach</button>
+        <button class="portal-tab" id="tabStudent">Student</button>
+      </div>
+
+      <!-- Coach -->
+      <div class="auth-form active" id="formCoach">
+        <div class="portal-type-badge">🛡️ Language Coach Console</div>
+        <form id="coachLoginForm">
+          <div class="form-group"><label class="form-label">Coach ID / Staff Code *</label><input type="text" class="form-control" placeholder="LEX-COACH-0042" required /></div>
+          <div class="form-group"><label class="form-label">Password *</label>
+            <div class="password-wrap">
+              <input type="password" class="form-control" placeholder="••••••••" required style="padding-right:44px;" />
+              <button type="button" class="password-toggle" onclick="const f=this.previousElementSibling;f.type=f.type==='password'?'text':'password'">👁</button>
+            </div>
+          </div>
+          <div class="form-success" style="display:none;padding:10px;background:rgba(34,197,94,0.1);border:1px solid #22c55e;border-radius:var(--radius-sm);color:#22c55e;font-size:0.86rem;margin-bottom:12px;">✓ Access granted! Redirecting to Coach Console…</div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Sign In as Coach →</button>
+        </form>
+        <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);margin-top:16px;">Need coach access? <a href="contact.html" style="color:var(--primary);">Contact Admin Dept</a></p>
+      </div>
+
+      <!-- Student -->
+      <div class="auth-form" id="formStudent">
+        <div class="portal-type-badge">👤 Student Portal Gate</div>
+        <div id="studentLoginForm">
+          <form id="studentLoginFormInner">
+            <div class="form-group"><label class="form-label">Student Email *</label><input type="email" class="form-control" placeholder="student@lingoflow.edu" required /></div>
+            <div class="form-group"><label class="form-label">Password *</label>
+              <div class="password-wrap">
+                <input type="password" class="form-control" placeholder="••••••••" required style="padding-right:44px;" />
+                <button type="button" class="password-toggle" onclick="const f=this.previousElementSibling;f.type=f.type==='password'?'text':'password'">👁</button>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:flex-end;margin-bottom:16px;"><a href="404.html" style="font-size:0.8rem;color:var(--primary);">Forgot password?</a></div>
+            <div class="form-success" style="display:none;padding:10px;background:rgba(34,197,94,0.1);border:1px solid #22c55e;border-radius:var(--radius-sm);color:#22c55e;font-size:0.86rem;margin-bottom:12px;">✓ Signed in! Redirecting to Student Portal…</div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Sign In →</button>
+          </form>
+          <div style="margin-top:24px;text-align:center;font-size:0.85rem;color:var(--text-secondary);">
+            Don't have a student account? <a href="register.html" style="color:var(--primary);font-weight:600;">Register here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  // Main tab navigation
+  const tabs = {
+    tabCoach: 'formCoach',
+    tabStudent: 'formStudent'
+  };
+  Object.keys(tabs).forEach(tid => {
+    document.getElementById(tid).addEventListener('click', () => {
+      Object.keys(tabs).forEach(t => {
+        document.getElementById(t).classList.remove('active');
+        document.getElementById(tabs[t]).classList.remove('active');
+      });
+      document.getElementById(tid).classList.add('active');
+      document.getElementById(tabs[tid]).classList.add('active');
+    });
+  });
+
+  // Check URL param
+  const urlType = new URLSearchParams(window.location.search).get('type');
+  if(urlType==='student' || urlType==='customer'){document.getElementById('tabStudent').click();}
+  else if(urlType==='coach' || urlType==='admin'){document.getElementById('tabCoach').click();}
+
+  // Handle Form Submissions to redirect to Dashboards
+  document.getElementById('coachLoginForm').addEventListener('submit', function(e) {
+    if(this.checkValidity()) {
+      e.preventDefault();
+      const staffId = this.querySelector('input[type="text"]').value;
+      this.querySelector('.form-success').style.display = 'block';
+      this.querySelector('button[type="submit"]').disabled = true;
+      setTimeout(() => window.location.href = `dashboard.html?email=${encodeURIComponent(staffId)}`, 1200);
+    }
+  });
+
+  document.getElementById('studentLoginFormInner').addEventListener('submit', function(e) {
+    if(this.checkValidity()) {
+      e.preventDefault();
+      const email = this.querySelector('input[type="email"]').value;
+      this.querySelector('.form-success').style.display = 'block';
+      this.querySelector('button[type="submit"]').disabled = true;
+      setTimeout(() => window.location.href = `dashboard2.html?email=${encodeURIComponent(email)}`, 1200);
+    }
+  });
+</script>
+</body>
+</html>

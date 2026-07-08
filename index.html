@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LingoFlow — Premium AI-Driven Language Learning Ecosystem</title>
+  <meta name="description" content="LingoFlow delivers immersive conversational practice, AI-driven pronunciation feedback, adaptive spaced repetition, and integrated reading tools." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60" style="margin: 0 auto 12px; display: block;">
+      <defs>
+        <linearGradient id="loadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#10b981" />
+          <stop offset="100%" stop-color="#06b6d4" />
+        </linearGradient>
+      </defs>
+      <rect x="15" y="25" width="70" height="50" rx="10" fill="url(#loadGrad)" />
+      <circle cx="15" cy="50" r="8" fill="#050b18" />
+      <circle cx="85" cy="50" r="8" fill="#050b18" />
+      <style>
+        rect { animation: pulseLoad 1.5s ease-in-out infinite; transform-origin: center; }
+        @keyframes pulseLoad { 0%, 100% { transform: scale(1); opacity: 0.7; } 50% { transform: scale(1.1); opacity: 1; } }
+      </style>
+    </svg>
+    <div class="preloader-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #fff;">Stackly</div>
+    <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">
+    <img src="logo.svg" alt="Stackly Logo" style="height:36px; width:auto;">
+  </a>
+  <div class="navbar-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="devices.html">Learning Tools</a>
+    <a href="services.html">Plans &amp; Standards</a>
+    <a href="innovations.html">AI Tutor</a>
+    <a href="contact.html">Custom Lesson</a>
+    <!-- Access Dropdown -->
+    <div style="display:flex; gap:10px; margin-left:14px;">
+      <a href="login.html" class="btn btn-ghost btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Register</a>
+    </div>
+  </div>
+  <button class="navbar-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="navbar-mobile" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="devices.html">Learning Tools</a>
+  <a href="services.html">Plans &amp; Standards</a>
+  <a href="innovations.html">AI Tutor</a>
+  <a href="contact.html">Custom Lesson</a>
+  <div class="mobile-access-section" style="display:flex; flex-direction:column; gap:10px; padding:15px; border-top:1px solid rgba(255,255,255,0.05); margin-top:10px;">
+    <a href="login.html" class="btn btn-outline" style="width:100%; justify-content:center;">Login</a>
+    <a href="register.html" class="btn btn-primary" style="width:100%; justify-content:center;">Register</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-label">
+      <span class="dot"></span>
+      AI-Powered Conversational Fluency · Salem, India
+    </div>
+    <h1 class="hero-title">
+      Unlock Fluency <span class="gradient-text">With AI Flow</span><br>and Immersive Practice
+    </h1>
+    <p class="hero-desc">
+      LingoFlow orchestrates real-time conversational practice, AI-driven pronunciation feedback, adaptive spaced repetition cards, and streak dashboards — converting complex grammar rules into confident speaking.
+    </p>
+    <div class="hero-actions">
+      <a href="devices.html" class="btn btn-primary btn-lg">Explore Tools ↗</a>
+      <a href="about.html" class="btn btn-outline btn-lg">Our Methodology</a>
+    </div>
+  </div>
+
+  <div class="hero-visual" style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-glow);border:1px solid var(--border);background:var(--bg-card);padding:20px;display:flex;align-items:center;justify-content:center;height:380px;">
+    <!-- Inline Animated SVG Mockup of Language Translation & Audio Flow -->
+    <svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        .g-line { stroke: var(--border2); stroke-dasharray: 4; stroke-dashoffset: 40; animation: flow 4s linear infinite; }
+        .g-line-active { stroke: var(--primary); stroke-dasharray: 6; stroke-dashoffset: 60; animation: flow 2s linear infinite; }
+        @keyframes flow { to { stroke-dashoffset: 0; } }
+        .g-node { animation: pulseNode 3s infinite ease-in-out; }
+        .g-node:nth-child(2) { animation-delay: 1s; }
+        .g-node:nth-child(3) { animation-delay: 2s; }
+        @keyframes pulseNode { 0%, 100% { r: 10; fill-opacity: 0.2; } 50% { r: 14; fill-opacity: 0.5; } }
+        .floating-card { animation: floatCard 6s ease-in-out infinite; }
+        .floating-card2 { animation: floatCard 6s ease-in-out infinite; animation-delay: 3s; }
+        @keyframes floatCard { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+      </style>
+      
+      <!-- Flow lines -->
+      <path d="M 60 70 L 200 150 L 340 70 M 200 150 L 200 250" fill="none" stroke-dashoffset="60" stroke-width="2" class="g-line-active" />
+      <path d="M 60 230 L 200 150 L 340 230" fill="none" stroke-width="1.5" class="g-line" />
+      
+      <!-- Connection Orbs -->
+      <circle cx="200" cy="150" r="12" fill="var(--primary)" fill-opacity="0.3" class="g-node" />
+      <circle cx="200" cy="150" r="5" fill="var(--primary)" />
+      
+      <!-- Left side incoming audio/chat requests -->
+      <g class="floating-card" transform="translate(10, 40)">
+        <rect width="100" height="50" rx="8" fill="var(--bg-dark)" stroke="var(--border)" stroke-width="1.5" />
+        <rect x="10" y="10" width="50" height="6" rx="3" fill="var(--primary)" />
+        <text x="10" y="28" font-family="sans-serif" font-size="8" fill="var(--text-primary)" font-weight="700">Bonjour ! Comment...</text>
+        <text x="10" y="38" font-family="sans-serif" font-size="7" fill="var(--text-muted)">French · Level A1</text>
+        <circle cx="88" cy="13" r="4" fill="#22c55e" /> <!-- Active badge -->
+      </g>
+      
+      <g class="floating-card2" transform="translate(10, 180)">
+        <rect width="100" height="50" rx="8" fill="var(--bg-dark)" stroke="var(--border)" stroke-width="1.5" />
+        <rect x="10" y="10" width="40" height="6" rx="3" fill="var(--secondary)" />
+        <text x="10" y="28" font-family="sans-serif" font-size="8" fill="var(--text-primary)" font-weight="700">¿Qué hora es?</text>
+        <text x="10" y="38" font-family="sans-serif" font-size="7" fill="var(--text-muted)">Spanish · Level A2</text>
+        <circle cx="88" cy="13" r="4" fill="#fbbf24" /> <!-- In progress badge -->
+      </g>
+      
+      <!-- Center AI tutor module label -->
+      <rect x="150" y="125" width="100" height="50" rx="10" fill="var(--bg-dark)" stroke="var(--secondary)" stroke-width="2" />
+      <text x="200" y="154" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">AI TUTOR</text>
+      
+      <!-- Right side output correction channels -->
+      <g class="floating-card2" transform="translate(290, 40)">
+        <rect width="100" height="50" rx="8" fill="var(--bg-dark)" stroke="var(--border)" stroke-width="1.5" />
+        <text x="50" y="24" font-family="'Space Grotesk', sans-serif" font-size="9" fill="var(--text-secondary)" text-anchor="middle">Pronunciation</text>
+        <rect x="25" y="32" width="50" height="5" rx="2.5" fill="#22c55e" /> <!-- Score: 98% -->
+      </g>
+      
+      <g class="floating-card" transform="translate(290, 180)">
+        <rect width="100" height="50" rx="8" fill="var(--bg-dark)" stroke="var(--border)" stroke-width="1.5" />
+        <text x="50" y="24" font-family="'Space Grotesk', sans-serif" font-size="9" fill="var(--text-secondary)" text-anchor="middle">Grammar Sync</text>
+        <circle cx="50" cy="35" r="4" fill="var(--primary)" />
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">Learning Stats</div>
+  <div style="overflow:hidden;flex:1;">
+    <div class="ticker-track">
+      <span class="ticker-item">LingoFlow AI Tutor completed 45,280 conversational sessions globally today</span>
+      <span class="ticker-item">Speech recognition engine upgraded — audio feedback latency drops to 32ms</span>
+      <span class="ticker-item">LingoFlow Chrome Extension syncs vocabulary from Netflix and YouTube subtitles</span>
+      <span class="ticker-item">Adaptive spaced repetition (SRS) algorithms proven to double retention rates</span>
+      <span class="ticker-item">Interactive vocabulary drills added for Japanese JLPT N5 and N4 levels</span>
+      <span class="ticker-item">New Spanish intermediate writing drills successfully deployed</span>
+      <span class="ticker-item">LingoFlow AI Tutor completed 45,280 conversational sessions globally today</span>
+      <span class="ticker-item">Speech recognition engine upgraded — audio feedback latency drops to 32ms</span>
+      <span class="ticker-item">LingoFlow Chrome Extension syncs vocabulary from Netflix and YouTube subtitles</span>
+      <span class="ticker-item">Adaptive spaced repetition (SRS) algorithms proven to double retention rates</span>
+      <span class="ticker-item">Interactive vocabulary drills added for Japanese JLPT N5 and N4 levels</span>
+      <span class="ticker-item">New Spanish intermediate writing drills successfully deployed</span>
+    </div>
+  </div>
+</div>
+
+<!-- Dashboard Preview Showcase -->
+<section style="position:relative; margin-top:-40px; margin-bottom:40px; z-index:5;">
+  <div class="container reveal">
+    <div style="background:var(--bg-glass); border:1px solid var(--border); padding:10px; border-radius:var(--radius-lg); box-shadow:var(--shadow-glow); max-width:900px; margin:0 auto;">
+      <img src="home_hero.webp" alt="Prompt: A futuristic language learning dashboard showing vocabulary progress, a glowing purple streak calendar, and chat bubbles, cyberpunk, premium aesthetic." style="width:100%; height:auto; display:block; border-radius:var(--radius);">
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section-sm" style="background:var(--bg-card);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-block reveal">
+        <span class="stat-value" data-target="99.8" data-suffix="%">0%</span>
+        <span class="stat-label">Speech Accuracy Feedback</span>
+      </div>
+      <div class="stat-block reveal reveal-delay-1">
+        <span class="stat-value" data-target="250" data-suffix="K+">0</span>
+        <span class="stat-label">Lessons Completed</span>
+      </div>
+      <div class="stat-block reveal reveal-delay-2">
+        <span class="stat-value" data-target="15" data-suffix="m" data-prefix="~ ">0</span>
+        <span class="stat-label">Avg. Daily Session</span>
+      </div>
+      <div class="stat-block reveal reveal-delay-3">
+        <span class="stat-value" data-target="50" data-suffix="+">0</span>
+        <span class="stat-label">Supported Languages</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Learning Platform</div>
+      <h2 class="section-title">Core <span>Learning</span> Features</h2>
+      <p class="section-subtitle">Premium language learning ecosystem — from adaptive spaced repetition vocabulary cards to real-time AI conversation mockups.</p>
+    </div>
+
+    <div class="grid-3" style="margin-top:56px;">
+      <div class="feature-card reveal">
+        <div class="card-icon">🤖</div>
+        <div class="feature-card-num">01</div>
+        <h3 class="card-title">AI Conversational Tutor</h3>
+        <p class="card-text">Classifies, tags, and corrects conversational speaking and writing in real-time. Cuts learning curve by 40%.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="card-icon">⏱️</div>
+        <div class="feature-card-num">02</div>
+        <h3 class="card-title">Spaced Repetition (SRS)</h3>
+        <p class="card-text">Dynamic repetition timers monitor word retention, automatically showing cards to review before forgetting occurs.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="card-icon">🔌</div>
+        <div class="feature-card-num">03</div>
+        <h3 class="card-title">Immersive Integrations</h3>
+        <p class="card-text">Connect browser extensions, YouTube/Netflix subtitles, web chat widgets, and mobile apps into one learning sync queue.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="card-icon">📊</div>
+        <div class="feature-card-num">04</div>
+        <h3 class="card-title">Live Progress Tracking</h3>
+        <p class="card-text">Visual charts, daily streak calendars, and vocabulary heatmaps updating live. Track your XP and fluency levels.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="card-icon">🛡️</div>
+        <div class="feature-card-num">05</div>
+        <h3 class="card-title">Certified Curriculums</h3>
+        <p class="card-text">Mapped to international standards like CEFR A1-C2. Features structured speaking nodes, vocabulary libraries, and audit trails.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="card-icon">🧩</div>
+        <div class="feature-card-num">06</div>
+        <h3 class="card-title">Developer Dictionary API</h3>
+        <p class="card-text">Build custom flashcards, query vocabulary databases, and fetch translation definitions using developer-first API endpoints.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-gradient"></div>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="grid-2" style="gap:64px;">
+      <div class="reveal">
+        <div class="section-tag">Learning Pipeline</div>
+        <h2 class="section-title">From <span>Immersive Practice to Fluency</span></h2>
+        <p class="section-subtitle">Our integrated learning loops ensure you acquire vocabulary and confidence in the shortest possible window.</p>
+
+        <div style="margin-top:40px;display:flex;flex-direction:column;gap:28px;">
+          <div style="display:flex;gap:20px;align-items:flex-start;">
+            <div class="step-number">1</div>
+            <div>
+              <h4 style="font-family:var(--font-heading);font-size:1rem;font-weight:600;margin-bottom:6px;">Immersive Ingestion</h4>
+              <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7;">Input via real-world reading or audio. LingoFlow AI immediately translates vocabulary and reviews pronunciation.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:20px;align-items:flex-start;">
+            <div class="step-number">2</div>
+            <div>
+              <h4 style="font-family:var(--font-heading);font-size:1rem;font-weight:600;margin-bottom:6px;">Adaptive Pathing</h4>
+              <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7;">Grammatical gaps are detected. Vocab is assigned difficulty rankings and auto-routed to personalized study cards.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:20px;align-items:flex-start;">
+            <div class="step-number">3</div>
+            <div>
+              <h4 style="font-family:var(--font-heading);font-size:1rem;font-weight:600;margin-bottom:6px;">Active Speaking &amp; Sync</h4>
+              <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7;">Learners practice speaking with AI-assisted corrections. Track progress instantly across mobile and web interfaces.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;">
+        <h4 style="font-family:var(--font-heading);font-size:1rem;font-weight:600;margin-bottom:20px;color:var(--text-secondary);">Weekly Study Goals</h4>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-secondary);margin-bottom:6px;"><span>Vocabulary Recall Goal</span><span style="color:var(--primary);">99.9%</span></div>
+            <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:99.9%;background:var(--gradient-primary);border-radius:3px;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-secondary);margin-bottom:6px;"><span>Grammar Conjugations</span><span style="color:var(--secondary-light);">98.2%</span></div>
+            <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:98.2%;background:linear-gradient(135deg,#10b981,#6ee7b7);border-radius:3px;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-secondary);margin-bottom:6px;"><span>Listening Comprehension</span><span style="color:var(--accent);">95.3%</span></div>
+            <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:95.3%;background:linear-gradient(135deg,#06b6d4,#0ea5e9);border-radius:3px;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-secondary);margin-bottom:6px;"><span>Conversational Speaking</span><span style="color:var(--accent2);">87.6%</span></div>
+            <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:87.6%;background:linear-gradient(135deg,#f59e0b,#fbbf24);border-radius:3px;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-secondary);margin-bottom:6px;"><span>Writing Submissions</span><span style="color:#22c55e;">97.1%</span></div>
+            <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:97.1%;background:linear-gradient(135deg,#22c55e,#4ade80);border-radius:3px;"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding:16px;background:var(--bg-glass2);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;">
+          <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:4px;">Average Active Study Session</div>
+          <div style="font-size:2.5rem;font-weight:800;font-family:var(--font-heading);background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">15 Minutes</div>
+          <div style="font-size:0.8rem;color:#22c55e;">↑ Mapped to Scientific Micro-Habit Methods</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION AREAS -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Use Cases</div>
+      <h2 class="section-title">Learning Across <span>Every Goal</span></h2>
+    </div>
+    <div class="grid-4" style="margin-top:48px;">
+      <div class="card reveal" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:14px;">🛍️</div>
+        <h3 class="card-title">Travel Prep</h3>
+        <p class="card-text">Auto-route to dialogues about booking hotels, ordering food at cafes, navigating flights, and shopping.</p>
+      </div>
+      <div class="card reveal reveal-delay-1" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:14px;">⚙️</div>
+        <h3 class="card-title">Business Fluency</h3>
+        <p class="card-text">Learn professional writing styles, interview prep, and corporate presentation vocabulary.</p>
+      </div>
+      <div class="card reveal reveal-delay-2" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:14px;">🏢</div>
+        <h3 class="card-title">Academic &amp; Exams</h3>
+        <p class="card-text">Manage vocabulary lists for IELTS, TOEFL, CEFR, or school curricula with customizable study goals.</p>
+      </div>
+      <div class="card reveal reveal-delay-3" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:14px;">🌐</div>
+        <h3 class="card-title">Casual Fluency</h3>
+        <p class="card-text">Practice daily speaking drills, chat with native AI tutors, and connect with global learning modules.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL PARTNERS -->
+<section class="section" style="background:var(--bg-dark); border-bottom:1px solid var(--border);">
+  <div class="container text-center reveal">
+    <div class="section-tag">Backed by Science</div>
+    <h2 class="section-title">Empowering <span>Global Learners</span></h2>
+    <p class="section-subtitle">Our learning methodologies are backed by leading language research hubs.</p>
+    
+    <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:48px;">
+      <div style="background:var(--bg-glass); border:1px solid var(--border); padding:20px 40px; border-radius:var(--radius); display:flex; align-items:center; gap:12px; transition:var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--primary)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border)'">
+        <span style="font-size:2rem;">🏫</span>
+        <span style="font-family:var(--font-heading); font-weight:700; font-size:1.1rem; color:var(--text-secondary);">IIT Madras Language Labs</span>
+      </div>
+      <div style="background:var(--bg-glass); border:1px solid var(--border); padding:20px 40px; border-radius:var(--radius); display:flex; align-items:center; gap:12px; transition:var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--primary)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border)'">
+        <span style="font-size:2rem;">🎓</span>
+        <span style="font-family:var(--font-heading); font-weight:700; font-size:1.1rem; color:var(--text-secondary);">NIT Trichy Linguistics</span>
+      </div>
+      <div style="background:var(--bg-glass); border:1px solid var(--border); padding:20px 40px; border-radius:var(--radius); display:flex; align-items:center; gap:12px; transition:var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--primary)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border)'">
+        <span style="font-size:2rem;">🛡️</span>
+        <span style="font-family:var(--font-heading); font-weight:700; font-size:1.1rem; color:var(--text-secondary);">Apex EdTech Alliance</span>
+      </div>
+      <div style="background:var(--bg-glass); border:1px solid var(--border); padding:20px 40px; border-radius:var(--radius); display:flex; align-items:center; gap:12px; transition:var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--primary)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border)'">
+        <span style="font-size:2rem;">💻</span>
+        <span style="font-family:var(--font-heading); font-weight:700; font-size:1.1rem; color:var(--text-secondary);">Future Tech Academy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section" id="faq-section" style="background:var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+      <p class="section-subtitle">Have questions about our learning ecosystem? Find quick answers below.</p>
+    </div>
+    
+    <div style="max-width:720px; margin:48px auto 0;">
+      <div class="accordion-item reveal">
+        <button class="accordion-header">Does LingoFlow sync across multiple devices? <span class="chevron">▼</span></button>
+        <div class="accordion-body">Yes. LingoFlow integrates across browser extensions, mobile apps, and web. Your streaks and vocabulary libraries are fully synced natively.</div>
+      </div>
+      <div class="accordion-item reveal reveal-delay-1">
+        <button class="accordion-header">Can I customize my daily learning targets? <span class="chevron">▼</span></button>
+        <div class="accordion-body">Yes. Learners can define daily XP goals, focus on specific topics like Travel or Business, and prioritize specific grammar modules in their settings.</div>
+      </div>
+      <div class="accordion-item reveal reveal-delay-2">
+        <button class="accordion-header">Is LingoFlow suitable for institutional usage? <span class="chevron">▼</span></button>
+        <div class="accordion-body">Absolutely. We support secure student authentication, detailed dashboard tracking for classroom cohorts, and encrypted progress databases for schools.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="section" style="position:relative; overflow:hidden;">
+  <div class="hero-orb hero-orb-2" style="top:50%; left:50%; transform:translate(-50%, -50%); opacity:0.6; pointer-events:none;"></div>
+  <div class="hero-orb hero-orb-1" style="bottom:-20%; right:-10%; transform:scale(0.8); opacity:0.4; pointer-events:none;"></div>
+  <div class="container reveal" style="position:relative; z-index:2;">
+    <div style="background:var(--gradient-card); border:1px solid rgba(16,185,129,0.3); border-radius:var(--radius-lg); padding:64px 40px; text-align:center; box-shadow:0 0 50px rgba(16,185,129,0.15); position:relative; overflow:hidden;">
+      <div style="position:absolute; inset:0; background:radial-gradient(circle at center, rgba(99,102,241,0.1) 0%, transparent 70%); pointer-events:none;"></div>
+      <h2 class="section-title" style="position:relative; z-index:3;">Ready to Achieve <span>True Fluency</span>?</h2>
+      <p class="section-subtitle" style="margin:20px auto 40px; position:relative; z-index:3;">Join thousands of active learners using LingoFlow to make language acquisition a seamless daily habit.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; position:relative; z-index:3;">
+        <a href="register.html" class="btn btn-primary btn-lg" style="box-shadow: 0 10px 40px rgba(16,185,129,0.6);">Get Started Free ↗</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Talk to a Tutor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <img src="logo.svg" alt="Stackly" class="footer-brand" style="height:40px; width:auto; margin-bottom:14px;">
+        <p class="footer-desc">Pioneering cognitive linguistics and language learning at the intersection of AI, real-time sync, and EdTech platforms.</p>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">📍 LingoFlow Salem, India</p>
+        <div class="footer-socials">
+          <a href="404.html" class="footer-social-btn" title="Twitter">𝕏</a>
+          <a href="404.html" class="footer-social-btn" title="LinkedIn">in</a>
+          <a href="404.html" class="footer-social-btn" title="GitHub">⌥</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <div class="footer-links">
+          <a href="devices.html">Learning Tools</a>
+          <a href="services.html">Plans &amp; Standards</a>
+          <a href="innovations.html">AI Tutor</a>
+          <a href="home2.html">Platform V2</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="dashboard.html">Coach Console</a>
+          <a href="login.html">Student Login</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <div class="footer-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Data Commitments</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LingoFlow Labs. All rights reserved.</span>
+      <span>Built with ♥ in Salem, India</span>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>

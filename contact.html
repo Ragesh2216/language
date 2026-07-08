@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Lesson Request — LingoFlow</title>
+  <meta name="description" content="Submit a custom lesson request to LingoFlow. Choose target language, proficiency level, write details, and connect with language coaches." />
+  <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+<div id="preloader"><div class="preloader-inner"><div class="preloader-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #fff;">Stackly</div><div class="preloader-bar"><div class="preloader-bar-fill"></div></div></div></div>
+
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand"><img src="logo.svg" alt="Stackly Logo" style="height:36px; width:auto;"></a>
+  <div class="navbar-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="devices.html">Learning Tools</a><a href="services.html">Plans &amp; Standards</a>
+    <a href="innovations.html">AI Tutor</a><a href="contact.html" class="active">Custom Lesson</a>
+    <div style="display:flex; gap:10px; margin-left:14px;">
+      <a href="login.html" class="btn btn-ghost btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" style="padding:7px 16px; border-radius:var(--radius-pill);">Register</a>
+    </div>
+  </div>
+  <button class="navbar-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+</nav>
+<div class="navbar-mobile" id="mobileNav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="devices.html">Learning Tools</a>
+  <a href="services.html">Plans &amp; Standards</a><a href="innovations.html">AI Tutor</a><a href="contact.html">Custom Lesson</a>
+  <div class="mobile-access-section" style="display:flex; flex-direction:column; gap:10px; padding:15px; border-top:1px solid rgba(255,255,255,0.05); margin-top:10px;">
+    <a href="login.html" class="btn btn-outline" style="width:100%; justify-content:center;">Login</a>
+    <a href="register.html" class="btn btn-primary" style="width:100%; justify-content:center;">Register</a>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="section-tag" style="margin:0 auto 20px;">Study Support</div>
+    <h1 class="section-title">Request a <span>Custom AI Lesson</span></h1>
+    <p class="section-subtitle" style="margin:0 auto;">Tell us what you want to study. Our AI engine will compile custom dialogues and vocabulary flashcards immediately.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:60px;align-items:flex-start;">
+      <!-- Info -->
+      <div>
+        <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-glow); margin-bottom:24px;" class="reveal">
+          <img src="contact_hero.webp" alt="Prompt: An abstract representation of language learning chat threads, glowing translation bubbles, and envelopes flying into a central database, dark background, neon purple glow." style="width:100%; height:auto; display:block;">
+        </div>
+        <div class="card reveal" style="margin-bottom:20px;">
+          <div class="card-icon">📍</div>
+          <h3 class="card-title">LingoFlow Labs HQ</h3>
+          <p class="card-text" style="margin-bottom:8px;">IT Park, SIDCO Industrial Estate<br>Salem – 636 016, Tamil Nadu, India</p>
+          <p class="card-text">Main NLP Development Floor &amp; Language Ingestion Hub</p>
+        </div>
+        <div class="card reveal reveal-delay-1" style="margin-bottom:20px;">
+          <div class="card-icon">📞</div>
+          <h3 class="card-title">Linguist Hotlines</h3>
+          <p class="card-text" style="margin-bottom:4px;"><a href="tel:+914272345678" style="color:var(--primary);">+91-427-234-5678</a> (academic relations)</p>
+          <p class="card-text">Direct hotlines are reserved for Institution &amp; school admins.</p>
+        </div>
+        <div class="card reveal reveal-delay-2" style="margin-bottom:20px;">
+          <div class="card-icon">📧</div>
+          <h3 class="card-title">Direct Ingestion Emails</h3>
+          <p class="card-text" style="margin-bottom:4px;"><a href="mailto:learn@lingoflow.com" style="color:var(--primary);">learn@lingoflow.com</a> — custom curriculum requests</p>
+          <p class="card-text" style="margin-bottom:4px;"><a href="mailto:support@lingoflow.com" style="color:var(--secondary-light);">support@lingoflow.com</a> — accounts &amp; billing</p>
+          <p class="card-text"><a href="mailto:tutors@lingoflow.com" style="color:var(--accent);">tutors@lingoflow.com</a> — manual essay grading help</p>
+        </div>
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon">⏰</div>
+          <h3 class="card-title">Tutor Review Hours</h3>
+          <p class="card-text" style="margin-bottom:4px;">Community Tier: Mon – Fri (9 AM – 5 PM IST)</p>
+          <p class="card-text">Pro &amp; Institutional Tiers: 24/7/365 essay reviews &amp; audio grading</p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="card reveal reveal-delay-1" style="padding:40px;">
+        <h3 style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;margin-bottom:8px;">Submit Lesson Parameters</h3>
+        <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:28px;">Specify parameters to trigger automatic AI generation rules.</p>
+        <form data-validate>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="form-control" placeholder="Arun Kumar" required />
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-control" placeholder="arun@company.com" required />
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:16px;">
+            <label class="form-label">Lesson Topic / Focus *</label>
+            <input type="text" class="form-control" placeholder="e.g. Travel Spanish: Ordering at a Restaurant..." required />
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div class="form-group">
+              <label class="form-label">Target Language</label>
+              <select class="form-control" style="background:var(--bg-card);color:var(--text-primary);" required>
+                <option value="" style="background:var(--bg-card);">Select language...</option>
+                <option style="background:var(--bg-card);">Spanish</option>
+                <option style="background:var(--bg-card);">French</option>
+                <option style="background:var(--bg-card);">German</option>
+                <option style="background:var(--bg-card);">Japanese</option>
+                <option style="background:var(--bg-card);">Italian</option>
+                <option style="background:var(--bg-card);">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Proficiency Target</label>
+              <select class="form-control" style="background:var(--bg-card);color:var(--text-primary);" required>
+                <option value="" style="background:var(--bg-card);">Select CEFR Level...</option>
+                <option style="background:var(--bg-card);">A1 (Beginner)</option>
+                <option style="background:var(--bg-card);">A2 (Elementary)</option>
+                <option style="background:var(--bg-card);">B1 (Intermediate)</option>
+                <option style="background:var(--bg-card);">B2 (Upper Intermediate)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Lesson Details &amp; Custom Prompts *</label>
+            <textarea class="form-control" placeholder="Describe vocabulary words, grammar rules, or dialogues you want this custom AI lesson to cover..." required style="min-height:120px;"></textarea>
+          </div>
+          <div class="form-success" style="display:none;padding:12px;background:rgba(34,197,94,0.1);border:1px solid #22c55e;border-radius:var(--radius-sm);color:#22c55e;font-size:0.88rem;margin-bottom:12px;">✓ Lesson requested! Your custom AI learning module is being generated. Check your student dashboard.</div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Submit Lesson to AI Builder →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<section class="section-sm" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="reveal" style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);height:280px;background:linear-gradient(135deg,var(--bg-card),var(--bg-dark));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+      <div style="font-size:3rem;">📍</div>
+      <div style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;">SIDCO Industrial Estate, Salem</div>
+      <div style="color:var(--text-muted);font-size:0.85rem;">Tamil Nadu 636 016, India</div>
+      <a href="https://maps.google.com/?q=Salem+Tamil+Nadu+India" target="_blank" class="btn btn-outline btn-sm" style="margin-top:8px;">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container-wide">
+  <div class="footer-grid">
+    <div><img src="logo.svg" alt="Stackly" class="footer-brand" style="height:40px; width:auto; margin-bottom:14px;"><p class="footer-desc">Pioneering cognitive linguistics and language learning at the intersection of AI, real-time sync, and EdTech platforms.</p><p style="font-size:.82rem;color:var(--text-muted);margin-bottom:16px;">📍 LingoFlow Salem, India</p><div class="footer-socials"><a href="404.html" class="footer-social-btn">𝕏</a><a href="404.html" class="footer-social-btn">in</a><a href="404.html" class="footer-social-btn">⌥</a></div></div>
+    <div><div class="footer-col-title">Product</div><div class="footer-links"><a href="devices.html">Learning Tools</a><a href="services.html">Plans &amp; Standards</a><a href="innovations.html">AI Tutor</a></div></div>
+    <div><div class="footer-col-title">Company</div><div class="footer-links"><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="dashboard.html">Coach Console</a></div></div>
+    <div><div class="footer-col-title">Legal</div><div class="footer-links"><a href="404.html">Privacy</a><a href="404.html">Terms</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 LingoFlow Labs. All rights reserved.</span><span>📍 LingoFlow Salem, India</span></div>
+</div></footer>
+<button id="scrollTop">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>
