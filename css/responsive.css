@@ -46,15 +46,51 @@
 
   .footer-grid { grid-template-columns: 1fr 1fr; }
 
-  .dashboard-layout { grid-template-columns: 1fr; }
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
   .dashboard-sidebar {
     position: static;
     height: auto;
+    width: 100% !important;
     display: flex; flex-wrap: wrap; gap: 8px;
-    padding: 16px 20px;
+    padding: 12px 20px;
+    background: rgba(13,26,46,0.8) !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 1 !important;
   }
-  .sidebar-nav-item { flex: 0 0 auto; margin-bottom: 0; }
-  .dashboard-main { padding: 20px; }
+  .dashboard-sidebar .sidebar-logo,
+  .dashboard-sidebar .sidebar-section-title {
+    display: none !important;
+  }
+  .sidebar-nav-item {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  .dashboard-main {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .dashboard-double-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+    gap: 16px;
+    min-height: auto;
+  }
+  .dashboard-banner-content {
+    padding-right: 0;
+  }
+  .dashboard-banner-image {
+    display: none;
+  }
 }
 
 /* ── Tablet Small 768px ─────────────────────────────── */
@@ -80,6 +116,63 @@
   .metrics-grid { grid-template-columns: 1fr 1fr; }
 
   .pricing-card { margin-bottom: 16px; }
+
+  .dashboard-form-grid { grid-template-columns: 1fr; }
+
+  /* Responsive Tables as Cards on Mobile */
+  .data-table, .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+    display: block !important;
+  }
+  .data-table thead {
+    display: none !important;
+  }
+  .data-table tr {
+    margin-bottom: 16px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    background: var(--bg-card) !important;
+    padding: 12px !important;
+  }
+  .data-table td {
+    border: none !important;
+    padding: 8px 0 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 0.85rem !important;
+    border-bottom: 1px solid rgba(255,255,255,0.03) !important;
+    text-align: right !important;
+    word-break: break-word !important;
+  }
+  .data-table td:last-child {
+    border-bottom: none !important;
+  }
+  .data-table td::before {
+    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+    font-size: 0.72rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    margin-right: 12px !important;
+    text-align: left !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Specific labels for Coach Table */
+  .filterable-section .data-table td:nth-of-type(1)::before { content: "Exercise ID"; }
+  .filterable-section .data-table td:nth-of-type(2)::before { content: "Student"; }
+  .filterable-section .data-table td:nth-of-type(3)::before { content: "Topic"; }
+  .filterable-section .data-table td:nth-of-type(4)::before { content: "CEFR Level"; }
+  .filterable-section .data-table td:nth-of-type(5)::before { content: "SLA Timer"; }
+  .filterable-section .data-table td:nth-of-type(6)::before { content: "Status"; }
+
+  /* Specific labels for Student Table */
+  #customerTicketsTable td:nth-of-type(1)::before { content: "Lesson ID" !important; }
+  #customerTicketsTable td:nth-of-type(2)::before { content: "Subject" !important; }
+  #customerTicketsTable td:nth-of-type(3)::before { content: "Category" !important; }
+  #customerTicketsTable td:nth-of-type(4)::before { content: "Created" !important; }
+  #customerTicketsTable td:nth-of-type(5)::before { content: "XP Remaining" !important; }
+  #customerTicketsTable td:nth-of-type(6)::before { content: "Status" !important; }
 }
 
 /* ── Mobile 480px ───────────────────────────────────── */
@@ -108,6 +201,44 @@
   .btn-lg { padding: 14px 28px; font-size: 0.95rem; }
 
   #scrollTop { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+
+  /* Telemetry alerts stacked layout */
+  .telemetry-alert {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .telemetry-alert-icon {
+    align-self: flex-start !important;
+  }
+  .telemetry-alert button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Sliding Ticket Drawer layout adjustments */
+  .drawer-footer {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 16px !important;
+  }
+  .drawer-footer button {
+    width: 100% !important;
+  }
+  .ticket-drawer {
+    width: 100% !important;
+  }
+
+  /* Chart spacing and label sizing */
+  .chart-container {
+    padding: 16px !important;
+  }
+  .chart-bars {
+    gap: 4px !important;
+  }
+  .chart-labels span {
+    font-size: 0.62rem !important;
+  }
 }
 
 /* ── Mobile Small 320px ────────────────────────────── */
@@ -115,4 +246,34 @@
   .hero-title { font-size: 1.6rem; }
   .section-title { font-size: 1.5rem; }
   .pricing-price { font-size: 2.2rem; }
+
+  /* Dashboards micro-screen elements scaling */
+  .dashboard-title {
+    font-size: 1.35rem !important;
+  }
+  .metric-value {
+    font-size: 1.5rem !important;
+  }
+  .telemetry-alert-title {
+    font-size: 0.8rem !important;
+  }
+  .telemetry-alert-desc {
+    font-size: 0.75rem !important;
+  }
+  .chat-bubble {
+    font-size: 0.8rem !important;
+    padding: 8px 12px !important;
+  }
+  .chart-labels span {
+    font-size: 0.52rem !important;
+  }
+  .map-grid {
+    gap: 2px !important;
+  }
+  #userProfile {
+    padding: 6px 12px !important;
+  }
+  #userEmailDisplay {
+    font-size: 0.75rem !important;
+  }
 }

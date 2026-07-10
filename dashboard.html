@@ -43,9 +43,9 @@
   </div>
 </div>
 
-<div class="dashboard-layout filterable-section" style="padding-top:var(--nav-height); min-height:100vh; display:flex;">
+<div class="dashboard-layout filterable-section">
   <!-- Sidebar -->
-  <aside class="dashboard-sidebar" style="width:260px; background:rgba(13,26,46,0.5); border-right:1px solid var(--border); padding:24px 16px; flex-shrink:0;">
+  <aside class="dashboard-sidebar">
     <div class="sidebar-logo"><span>⬡</span> Stackly Coach</div>
     <div class="sidebar-section-title">Overview</div>
     <a href="dashboard.html" class="sidebar-nav-item active"><span class="icon">📊</span> Coach Console</a>
@@ -66,8 +66,8 @@
   </aside>
 
   <!-- Main Console -->
-  <main class="dashboard-main" style="flex:1; padding:40px;">
-    <div class="dashboard-header" style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:30px;">
+  <main class="dashboard-main">
+    <div class="dashboard-header">
       <div>
         <div class="breadcrumb" style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;"><a href="index.html">Home</a><span> / </span><span>Coach Console</span></div>
         <h1 class="dashboard-title" style="font-family:var(--font-heading); font-size:1.8rem; font-weight:700; margin-bottom:6px;">Language Coach Review &amp; Grade Console</h1>
@@ -80,18 +80,18 @@
     </div>
 
     <!-- Header visual banner -->
-    <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-glow); margin-bottom:28px; max-height:140px; background:linear-gradient(135deg,var(--bg-card),var(--bg-dark)); display:flex; justify-content:space-between; align-items:center; padding:0 30px; position:relative;" class="reveal">
-      <div style="position:relative; z-index:2; flex:1;">
+    <div class="dashboard-banner reveal">
+      <div class="dashboard-banner-content">
         <h2 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;margin-bottom:6px;">Student Submissions Sync</h2>
         <p style="font-size:0.85rem;color:var(--text-secondary);">Tutor audio review and writing evaluations online. View submitted work, leave feedback, and score lessons!</p>
       </div>
-      <div style="height:140px; width:220px; display:flex; align-items:center; opacity:0.85; margin-right:-30px;">
-        <img src="dashboard_hero.webp" alt="Prompt: Futuristic language telemetry header banner, purple speech matrix stream, dark grid, horizontal layout, digital art." style="height:100%; width:100%; object-fit:cover; border-radius:0 var(--radius) var(--radius) 0;">
+      <div class="dashboard-banner-image">
+        <img src="dashboard_hero.webp" alt="Prompt: Futuristic language telemetry header banner, purple speech matrix stream, dark grid, horizontal layout, digital art.">
       </div>
     </div>
 
     <!-- Metrics cards -->
-    <div class="metrics-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:28px;">
+    <div class="metrics-grid">
       <div class="metric-card" style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:20px;">
         <div class="metric-label" style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:6px;">Pending Reviews</div>
         <div class="metric-value" data-target="14" style="-webkit-text-fill-color:initial; font-size:1.8rem; font-weight:700;">0</div>
@@ -121,7 +121,7 @@
     </div>
 
     <!-- Charts row -->
-    <div style="display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:24px;" class="reveal">
+    <div class="dashboard-double-grid reveal">
       <div class="chart-container" style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
         <div class="chart-title" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; font-weight:600; font-family:var(--font-heading);">
           <span>Exercises Graded — 2026</span>
@@ -141,7 +141,7 @@
           <div class="chart-bar" style="height:92%; flex:1; background:var(--gradient-primary); border-radius:3px 3px 0 0;" title="Nov: 230"></div>
           <div class="chart-bar" style="height:100%; flex:1; background:var(--gradient-primary); border-radius:3px 3px 0 0;" title="Dec: 250"></div>
         </div>
-        <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:0.72rem;color:var(--text-muted);">
+        <div class="chart-labels" style="display:flex;justify-content:space-between;margin-top:8px;font-size:0.72rem;color:var(--text-muted);">
           <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
         </div>
       </div>
@@ -273,18 +273,72 @@
     <div class="chart-container reveal" style="margin-top:24px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
       <div class="chart-title" style="margin-bottom:16px; font-weight:600; font-family:var(--font-heading);">🔔 Student Fluency Alerts</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:var(--radius-sm);">
-          <div style="width:40px;height:40px;background:rgba(239,68,68,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🚨</div>
-          <div style="flex:1;"><div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);">#STUDENT-0643 — Pronunciation Score Below 70%</div><div style="font-size:0.8rem;color:var(--text-muted);">Student Vikram failed Spanish vowel pronunciation check. Needs vocal tutor session guidance.</div></div>
+        <div class="telemetry-alert">
+          <div class="telemetry-alert-icon">🚨</div>
+          <div class="telemetry-alert-content">
+            <div class="telemetry-alert-title">#STUDENT-0643 — Pronunciation Score Below 70%</div>
+            <div class="telemetry-alert-desc">Student Vikram failed Spanish vowel pronunciation check. Needs vocal tutor session guidance.</div>
+          </div>
           <button class="btn btn-sm" style="background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.3);flex-shrink:0;">Assign Exercise</button>
         </div>
-        <div style="display:flex;align-items:center;gap:14px;padding:14px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius-sm);">
-          <div style="width:40px;height:40px;background:rgba(245,158,11,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⚠️</div>
-          <div style="flex:1;"><div style="font-size:0.9rem;font-weight:600;color:var(--text-primary);">Essay Correction Queue — Limit Exceeded</div><div style="font-size:0.8rem;color:var(--text-muted);">Failing to push grades to student notifications due to high batch load. Queue holding 42 events.</div></div>
+        <div class="telemetry-alert warning">
+          <div class="telemetry-alert-icon">⚠️</div>
+          <div class="telemetry-alert-content">
+            <div class="telemetry-alert-title">Essay Correction Queue — Limit Exceeded</div>
+            <div class="telemetry-alert-desc">Failing to push grades to student notifications due to high batch load. Queue holding 42 events.</div>
+          </div>
           <button class="btn btn-sm" style="background:rgba(245,158,11,.15);color:var(--accent2);border:1px solid rgba(245,158,11,.3);flex-shrink:0;">Flush Queue</button>
         </div>
       </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container-wide">
+        <div class="footer-grid">
+          <div>
+            <img src="logo.svg" alt="Stackly" class="footer-brand" style="height:40px; width:auto; margin-bottom:14px;">
+            <p class="footer-desc">Pioneering cognitive linguistics and language learning at the intersection of AI, real-time sync, and EdTech platforms.</p>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">📍 LingoFlow Salem, India</p>
+            <div class="footer-socials">
+              <a href="404.html" class="footer-social-btn" title="Twitter">𝕏</a>
+              <a href="404.html" class="footer-social-btn" title="LinkedIn">in</a>
+              <a href="404.html" class="footer-social-btn" title="GitHub">⌥</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Product</div>
+            <div class="footer-links">
+              <a href="devices.html">Learning Tools</a>
+              <a href="services.html">Plans &amp; Standards</a>
+              <a href="innovations.html">AI Tutor</a>
+              <a href="home2.html">Platform V2</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Company</div>
+            <div class="footer-links">
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact Us</a>
+              <a href="dashboard.html">Coach Console</a>
+              <a href="login.html">Student Login</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Legal</div>
+            <div class="footer-links">
+              <a href="404.html">Privacy Policy</a>
+              <a href="404.html">Terms of Service</a>
+              <a href="404.html">Data Commitments</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 LingoFlow Labs. All rights reserved.</span>
+          <span>Built with ♥ in Salem, India</span>
+        </div>
+      </div>
+    </footer>
   </main>
 </div>
 

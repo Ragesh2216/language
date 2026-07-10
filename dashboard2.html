@@ -46,9 +46,9 @@
   </div>
 </div>
 
-<div class="dashboard-layout" style="padding-top:var(--nav-height); min-height:100vh; display:flex;">
+<div class="dashboard-layout">
   <!-- Sidebar -->
-  <aside class="dashboard-sidebar" style="width:260px; background:rgba(13,26,46,0.5); border-right:1px solid var(--border); padding:24px 16px; flex-shrink:0;">
+  <aside class="dashboard-sidebar">
     <div class="sidebar-logo"><span>⬡</span> Stackly Student</div>
     <div class="sidebar-section-title">My Account</div>
     <a href="dashboard2.html" class="sidebar-nav-item active"><span class="icon">👤</span> Student Portal</a>
@@ -66,8 +66,8 @@
   </aside>
 
   <!-- Main Portal -->
-  <main class="dashboard-main" style="flex:1; padding:40px;">
-    <div class="dashboard-header" style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:30px;">
+  <main class="dashboard-main">
+    <div class="dashboard-header">
       <div>
         <div class="breadcrumb" style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;"><a href="index.html">Home</a><span> / </span><a href="dashboard.html">Dashboard</a><span> / </span><span>Student Portal</span></div>
         <h1 class="dashboard-title" style="font-family:var(--font-heading); font-size:1.8rem; font-weight:700; margin-bottom:6px;">Student Learning Dashboard</h1>
@@ -80,18 +80,18 @@
     </div>
 
     <!-- Header visual banner -->
-    <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-glow); margin-bottom:28px; max-height:140px; background:linear-gradient(135deg,var(--bg-card),var(--bg-dark)); display:flex; justify-content:space-between; align-items:center; padding:0 30px; position:relative;" class="reveal">
-      <div style="position:relative; z-index:2; flex:1;">
+    <div class="dashboard-banner reveal">
+      <div class="dashboard-banner-content">
         <h2 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;margin-bottom:6px;">Student Workspace Online</h2>
         <p style="font-size:0.85rem;color:var(--text-secondary);">Access your language modules, review daily spaced repetition flashcards, and chat in Spanish, French, or German!</p>
       </div>
-      <div style="height:140px; width:220px; display:flex; align-items:center; opacity:0.85; margin-right:-30px;">
-        <img src="student_hero.webp" alt="Prompt: Clean user learning portal header banner, glowing purple book graphics, dark background, glassmorphism, horizontal layout, digital art." style="height:100%; width:100%; object-fit:cover; border-radius:0 var(--radius) var(--radius) 0;">
+      <div class="dashboard-banner-image">
+        <img src="student_hero.webp" alt="Prompt: Clean user learning portal header banner, glowing purple book graphics, dark background, glassmorphism, horizontal layout, digital art.">
       </div>
     </div>
 
     <!-- Metrics -->
-    <div class="metrics-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:28px;">
+    <div class="metrics-grid">
       <div class="metric-card" style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:20px;">
         <div class="metric-label" style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:6px;">Lesson XP Gained</div>
         <div class="metric-value" id="submittedCount" style="-webkit-text-fill-color:initial; font-size:1.8rem; font-weight:700;">1450</div>
@@ -115,7 +115,7 @@
     </div>
 
     <!-- Category + Activity row -->
-    <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:20px;margin-bottom:24px;">
+    <div class="dashboard-double-grid">
       <!-- Study Topic Focus -->
       <div class="chart-container reveal" style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
         <div class="chart-title" style="margin-bottom:16px; font-weight:600; font-family:var(--font-heading);">Study Topic Focus</div>
@@ -145,7 +145,7 @@
           <div class="chart-bar" style="height:92%; flex:1; background:var(--gradient-primary); border-radius:3px 3px 0 0;" title="Nov: 230"></div>
           <div class="chart-bar" style="height:100%; flex:1; background:var(--gradient-primary); border-radius:3px 3px 0 0;" title="Dec: 250"></div>
         </div>
-        <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:0.72rem;color:var(--text-muted);">
+        <div class="chart-labels" style="display:flex;justify-content:space-between;margin-top:8px;font-size:0.72rem;color:var(--text-muted);">
           <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
         </div>
       </div>
@@ -155,7 +155,7 @@
     <div class="chart-container reveal" id="submit-ticket-portal" style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
       <div class="chart-title" style="margin-bottom:16px; font-weight:600; font-family:var(--font-heading);">🎫 Generate a Custom AI Lesson</div>
       <form id="portalSubmitForm">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:12px;">
+        <div class="dashboard-form-grid">
           <div class="form-group" style="margin-bottom:0;">
             <label class="form-label">Lesson Subject Focus *</label>
             <input type="text" class="form-control" id="pSubject" placeholder="e.g. Travel Spanish: Ordering Tapas..." required>
@@ -218,7 +218,7 @@
           <div class="chat-bubble bot" style="align-self: flex-start; background: var(--bg-glass); border: 1px solid var(--border); padding: 10px 16px; border-radius: 0 12px 12px 12px; font-size: 0.9rem; color: var(--text-primary); max-width: 80%;">¡Hola! I am your LingoFlow AI Tutor. Try typing a greeting in Spanish, French, or German (e.g. 'hola', 'bonjour', 'hallo') to practice speaking!</div>
         </div>
         <div class="chat-input-area" style="display: flex; border-top: 1px solid var(--border); background: var(--bg-card);">
-          <input type="text" class="chat-input" id="chatInput" placeholder="Type spanish, french, or german message here..." style="flex: 1; padding: 16px; background: none; border: none; color: var(--text-primary); font-size: 0.9rem; outline: none;">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Type message here..." style="flex: 1; padding: 16px; background: none; border: none; color: var(--text-primary); font-size: 0.9rem; outline: none;">
           <button class="chat-send-btn" id="chatSendBtn" style="padding: 0 24px; background: var(--gradient-primary); border: none; color: #fff; font-weight: 600; font-size: 0.9rem; cursor: pointer;">Send</button>
         </div>
       </div>
@@ -243,6 +243,54 @@
         <span style="font-size:0.75rem;color:var(--text-muted);">Highly active</span>
       </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container-wide">
+        <div class="footer-grid">
+          <div>
+            <img src="logo.svg" alt="Stackly" class="footer-brand" style="height:40px; width:auto; margin-bottom:14px;">
+            <p class="footer-desc">Pioneering cognitive linguistics and language learning at the intersection of AI, real-time sync, and EdTech platforms.</p>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">📍 LingoFlow Salem, India</p>
+            <div class="footer-socials">
+              <a href="404.html" class="footer-social-btn" title="Twitter">𝕏</a>
+              <a href="404.html" class="footer-social-btn" title="LinkedIn">in</a>
+              <a href="404.html" class="footer-social-btn" title="GitHub">⌥</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Product</div>
+            <div class="footer-links">
+              <a href="devices.html">Learning Tools</a>
+              <a href="services.html">Plans &amp; Standards</a>
+              <a href="innovations.html">AI Tutor</a>
+              <a href="home2.html">Platform V2</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Company</div>
+            <div class="footer-links">
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact Us</a>
+              <a href="dashboard.html">Coach Console</a>
+              <a href="login.html">Student Login</a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Legal</div>
+            <div class="footer-links">
+              <a href="404.html">Privacy Policy</a>
+              <a href="404.html">Terms of Service</a>
+              <a href="404.html">Data Commitments</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 LingoFlow Labs. All rights reserved.</span>
+          <span>Built with ♥ in Salem, India</span>
+        </div>
+      </div>
+    </footer>
   </main>
 </div>
 
